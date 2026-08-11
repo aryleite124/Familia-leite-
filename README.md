@@ -62,6 +62,30 @@ relance o que vai cair.
 Cada lançamento automático recebe um identificador previsível (`fixa@mês`), então os dois
 celulares geram exatamente o mesmo registro e a mesclagem nunca duplica a conta.
 
+## Módulos
+
+**Contas** — o carnê do mês. **Plano** — orçamento e divisão da renda.
+**Metas** — reserva e objetivos. **Painel** — KPIs, gráficos e plano de evolução.
+**Mais** — Contas fixas, Investimentos, Conquistas, Sincronização, Backup e Configurações.
+
+### Investimentos
+
+Cadastre cada aplicação e registre duas coisas ao longo do tempo:
+
+- **Aporte** — quanto você colocou. Sobe o saldo e o total aportado.
+- **Atualizar saldo** — o número que aparece no app do banco. A diferença entre saldo e
+  aportado é o rendimento acumulado.
+
+O app não conecta em banco nem corretora. O trabalho dele é guardar o histórico, calcular
+o rendimento e desenhar a curva do patrimônio.
+
+### Configurações
+
+Nome de quem usa o aparelho, tema (automático, claro ou escuro) e a zona de risco com
+três limpezas: só o mês exibido, o cache de imagens, ou tudo. Com sincronização ligada,
+apagar tudo limpa o repositório e atinge o outro aparelho — por isso o botão de backup
+vem antes.
+
 ## Detalhes de uso
 
 - **Tema escuro** entra sozinho conforme o ajuste do celular.

@@ -1,6 +1,6 @@
 /* Cache do app para funcionar sem internet.
    Ao publicar uma versão nova, troque o número da VERSAO. */
-const VERSAO = "carne-v4";
+const VERSAO = "carne-v5";
 const ARQUIVOS = [
   "./",
   "./index.html",

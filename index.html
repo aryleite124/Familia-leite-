@@ -392,6 +392,86 @@ h1,h2,h3{margin:0;font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;f
   .graf .pil{background:rgba(var(--tinta-rgb),.10)}
   .visor{background:#fff}
 }
+html[data-tema="claro"]{
+    --papel:#E6E9E4;
+    --cartao:#FCFDFB;
+    --tinta:#16323C;
+    --fraca:#5F7379;
+    --linha:#CDD6CF;
+    --cofre:#1D7A5F;
+    --carimbo:#B23A2B;
+    --ambar:#A67810;
+    --tinta-rgb:22,50,60;
+    --cofre-rgb:29,122,95;
+    --carimbo-rgb:178,58,43;
+    --ambar-rgb:166,120,16;
+    --sombra:0 1px 0 rgba(22,50,60,.06), 0 6px 18px -12px rgba(22,50,60,.45);
+    --realce:rgba(var(--tinta-rgb),.05);
+}
+html[data-tema="escuro"]{
+    --papel:#0F191D;
+    --cartao:#17262C;
+    --tinta:#E3EAE7;
+    --fraca:#8FA3A9;
+    --linha:#2A3A41;
+    --cofre:#3AAE86;
+    --carimbo:#E47964;
+    --ambar:#D6A63A;
+    --tinta-rgb:227,234,231;
+    --cofre-rgb:58,174,134;
+    --carimbo-rgb:228,121,100;
+    --ambar-rgb:214,166,58;
+    --sombra:0 1px 0 rgba(0,0,0,.3), 0 8px 20px -14px rgba(0,0,0,.9);
+    --realce:rgba(var(--tinta-rgb),.06);
+}
+html[data-tema="escuro"] .visor{background:#fff}
+html[data-tema="escuro"] .graf .pil{background:rgba(var(--tinta-rgb),.10)}
+
+/* --- KPIs --- */
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+.kpi{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:13px 14px;box-shadow:var(--sombra)}
+.kpi .r{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--fraca);display:block;margin-bottom:6px;line-height:1.3}
+.kpi .n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1;display:block}
+.kpi .d{font-size:11px;color:var(--fraca);margin-top:5px;display:block;line-height:1.3}
+.kpi.bom .n{color:var(--cofre)}
+.kpi.ruim .n{color:var(--carimbo)}
+.kpi.meio .n{color:var(--ambar)}
+
+/* --- menu --- */
+.menu{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;overflow:hidden;box-shadow:var(--sombra)}
+.menu button{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:14px 16px;border-bottom:1px solid var(--linha);min-height:58px}
+.menu button:last-child{border-bottom:none}
+.menu button:active{background:var(--realce)}
+.menu .ic-m{width:34px;height:34px;border-radius:9px;background:var(--realce);display:grid;place-items:center;font-size:15px;flex:0 0 auto}
+.menu .tx{flex:1;min-width:0}
+.menu .tx b{display:block;font-size:15px;font-weight:600}
+.menu .tx span{font-size:12px;color:var(--fraca);display:block;line-height:1.3}
+.menu .seta-m{color:var(--fraca);font-size:17px;flex:0 0 auto}
+
+/* --- conquistas --- */
+.medalhas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.medalha{border:1px solid var(--linha);border-radius:10px;padding:15px 12px;background:var(--cartao);text-align:center;box-shadow:var(--sombra)}
+.medalha.travada{opacity:.5;box-shadow:none}
+.medalha .selo-c{width:54px;height:54px;margin:0 auto 9px;border:2px solid var(--cofre);border-radius:50%;
+  display:grid;place-items:center;font-family:"IBM Plex Mono",monospace;font-size:16px;font-weight:600;
+  color:var(--cofre);transform:rotate(-7deg)}
+.medalha.travada .selo-c{border-style:dashed;border-color:var(--linha);color:var(--fraca);transform:none}
+.medalha b{display:block;font-size:13px;font-weight:600;line-height:1.25}
+.medalha span{font-size:11px;color:var(--fraca);display:block;margin-top:4px;line-height:1.3}
+
+/* --- investimentos --- */
+.inv{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:15px;box-shadow:var(--sombra);margin-bottom:10px;width:100%;text-align:left}
+.inv .top{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.inv .top b{flex:1;min-width:0;font-size:15px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inv .tipo{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--fraca);
+  border:1px solid var(--linha);border-radius:3px;padding:2px 6px;white-space:nowrap}
+.inv .saldo{font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:600;letter-spacing:-.02em}
+.inv .rend{font-size:12px;margin-top:5px;color:var(--fraca)}
+.inv .rend b{font-family:"IBM Plex Mono",monospace}
+.inv .rend.pos b{color:var(--cofre)}
+.inv .rend.neg b{color:var(--carimbo)}
+.perigo-zona{border:1px solid rgba(var(--carimbo-rgb),.35);border-radius:10px;padding:15px;background:rgba(var(--carimbo-rgb),.05)}
+.perigo-zona p{margin:0 0 12px;font-size:12.5px;color:var(--fraca);line-height:1.45}
 
 /* --- escolha do comprovante --- */
 .opcao{
@@ -448,8 +528,8 @@ h1,h2,h3{margin:0;font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;f
     <button data-aba="contas" aria-current="true"><span class="ic">▤</span>Contas</button>
     <button data-aba="plano"><span class="ic">◑</span>Plano</button>
     <button data-aba="metas"><span class="ic">◎</span>Metas</button>
-    <button data-aba="evolucao"><span class="ic">◪</span>Evolução</button>
-    <button data-aba="fixas"><span class="ic">↻</span>Fixas</button>
+    <button data-aba="painel"><span class="ic">◪</span>Painel</button>
+    <button data-aba="mais"><span class="ic">⋯</span>Mais</button>
   </div>
 </nav>
 
@@ -691,7 +771,7 @@ function recado(txt){
   el._t = setTimeout(function(){ el.classList.remove("visivel"); }, 2400);
 }
 
-function padrao(){ return {versao:1, renda:0, fixas:[], metas:[], meses:{}, ultimoBackup:null, atualizadoEm:null, lixeira:{}}; }
+function padrao(){ return {versao:1, renda:0, fixas:[], metas:[], meses:{}, investimentos:[], ultimoBackup:null, atualizadoEm:null, lixeira:{}}; }
 
 /* ---------- comprovantes ---------- */
 var bancoImg = null;
@@ -830,6 +910,7 @@ function normalizarEstado(){
   if(typeof estado.ultimoBackup === "undefined") estado.ultimoBackup = null;
   if(typeof estado.atualizadoEm === "undefined") estado.atualizadoEm = null;
   estado.lixeira = estado.lixeira || {};
+  estado.investimentos = estado.investimentos || [];
 }
 
 function agora(){ return new Date().toISOString(); }
@@ -840,6 +921,13 @@ function matar(oid){ if(oid) estado.lixeira[oid] = agora(); }
 var SYNC_KEY = "financas:sync";
 var sync = {repo:"", token:"", arquivo:"dados.json", branch:"main", sha:null, ultima:null, ativo:false};
 var situacaoSync = "off", enviandoSync = false, timerSync = null;
+
+function aplicarTema(t){
+  sync.tema = t || "auto";
+  salvarSync();
+  if(sync.tema === "auto") document.documentElement.removeAttribute("data-tema");
+  else document.documentElement.setAttribute("data-tema", sync.tema);
+}
 
 function carregarSync(){
   try{
@@ -1028,6 +1116,7 @@ function mesclarEstados(a, b){
     lixeira: lixo,
     fixas: mesclarListas(a.fixas, b.fixas, lixo),
     metas: mesclarListas(a.metas, b.metas, lixo),
+    investimentos: mesclarListas(a.investimentos, b.investimentos, lixo),
     meses: {}
   };
   var chaves = {};
@@ -1331,23 +1420,30 @@ function render(){
   var btnHoje = document.getElementById("ir-hoje");
   var agora = chaveMes(new Date());
 
-  if(aba === "fixas" || aba === "metas" || aba === "evolucao"){
-    topo.innerHTML = (aba === "metas" ? "Metas" : aba === "evolucao" ? "Evolução" : "Contas fixas");
-    document.getElementById("ant").style.visibility = "hidden";
+  var TITULOS = {metas:"Metas", painel:"Painel", mais:"Mais", fixas:"Contas fixas",
+                 investimentos:"Investimentos", conquistas:"Conquistas", config:"Configurações"};
+  var SUB = {fixas:1, investimentos:1, conquistas:1, config:1};
+  if(TITULOS[aba]){
+    topo.innerHTML = esc(TITULOS[aba]);
+    document.getElementById("ant").style.visibility = SUB[aba] ? "visible" : "hidden";
+    document.getElementById("ant").dataset.volta = SUB[aba] ? "1" : "";
     document.getElementById("prox").style.visibility = "hidden";
     btnHoje.hidden = true;
   }else{
+    document.getElementById("ant").dataset.volta = "";
     topo.innerHTML = esc(nomeMes(mesAtivo)) + " <span>" + partes(mesAtivo).ano + "</span>";
     document.getElementById("ant").style.visibility = "visible";
     document.getElementById("prox").style.visibility = "visible";
     btnHoje.hidden = (mesAtivo === agora);
   }
 
+  var atalho = SUB[aba] ? "mais" : aba;
   var botoes = document.querySelectorAll(".abas button");
   for(var i=0;i<botoes.length;i++){
-    botoes[i].setAttribute("aria-current", botoes[i].dataset.aba === aba ? "true" : "false");
+    botoes[i].setAttribute("aria-current", botoes[i].dataset.aba === atalho ? "true" : "false");
   }
-  document.getElementById("fab").style.display = (aba === "plano" || aba === "evolucao") ? "none" : "grid";
+  var comFab = {contas:1, fixas:1, metas:1, investimentos:1};
+  document.getElementById("fab").style.display = comFab[aba] ? "grid" : "none";
 
   var tela = document.getElementById("tela");
   tela.classList.toggle("anima", animarLista);
@@ -1355,7 +1451,11 @@ function render(){
   if(aba === "contas") tela.innerHTML = telaContas();
   else if(aba === "plano") tela.innerHTML = telaPlano();
   else if(aba === "metas") tela.innerHTML = telaMetas();
-  else if(aba === "evolucao") tela.innerHTML = telaEvolucao();
+  else if(aba === "painel") tela.innerHTML = telaPainel();
+  else if(aba === "mais") tela.innerHTML = telaMais();
+  else if(aba === "investimentos") tela.innerHTML = telaInvestimentos();
+  else if(aba === "conquistas") tela.innerHTML = telaConquistas();
+  else if(aba === "config") tela.innerHTML = telaConfig();
   else tela.innerHTML = telaFixas();
 
   recemPago = null;
@@ -1854,6 +1954,296 @@ function graficoSobra(hist){
   }).join("") + '</div>';
 }
 
+/* ================= investimentos ================= */
+var TIPOS_INV = ["Poupança","Tesouro Direto","CDB / RDB","Fundo","Ações e FIIs","Previdência","Cripto","Outro"];
+
+function totalAportes(v){
+  return (v.aportes||[]).reduce(function(t,a){ return t + (a.valor||0); }, 0);
+}
+function saldoInv(v){
+  var s = (v.saldos||[]).slice().sort(function(a,b){ return a.data < b.data ? -1 : 1; });
+  return s.length ? s[s.length-1].valor : totalAportes(v);
+}
+function dataSaldo(v){
+  var s = (v.saldos||[]).slice().sort(function(a,b){ return a.data < b.data ? -1 : 1; });
+  return s.length ? s[s.length-1].data : null;
+}
+function patrimonio(){
+  var saldo = 0, aportado = 0;
+  (estado.investimentos||[]).forEach(function(v){ saldo += saldoInv(v); aportado += totalAportes(v); });
+  return {saldo:saldo, aportado:aportado, rendimento:saldo - aportado,
+          pc: aportado > 0 ? (saldo - aportado)/aportado : 0};
+}
+function patrimonioPorMes(n){
+  var base = chaveMes(new Date()), out = [];
+  for(var i=n-1;i>=0;i--){
+    var k = moveMes(base, -i), t = 0;
+    (estado.investimentos||[]).forEach(function(v){
+      var cand = (v.saldos||[]).filter(function(s){ return String(s.data).slice(0,7) <= k; });
+      cand.sort(function(a,b){ return a.data < b.data ? -1 : 1; });
+      if(cand.length) t += cand[cand.length-1].valor;
+    });
+    out.push({chave:k, total:t});
+  }
+  return out;
+}
+function acharInv(vid){
+  var achado = null;
+  (estado.investimentos||[]).forEach(function(v){ if(v.id === vid) achado = v; });
+  return achado;
+}
+
+/* ================= conquistas ================= */
+function listaConquistas(){
+  var p = panorama();
+  var hist = p.hist;
+  var metasFeitas = (estado.metas||[]).filter(function(m){ return calculoMeta(m).completa; });
+  var recibos = 0;
+  Object.keys(estado.meses).forEach(function(k){
+    (estado.meses[k].itens||[]).forEach(function(i){ if(i.comprovante) recibos++; });
+  });
+  var quitados = hist.filter(function(x){ return x.total > 0 && x.pago >= x.total - 0.01; }).length;
+  var seq = 0, melhorAzul = 0;
+  hist.forEach(function(x){ if(x.sobra > 0){ seq++; melhorAzul = Math.max(melhorAzul, seq); } else seq = 0; });
+  var sp = 0, melhorPrazo = 0;
+  hist.forEach(function(x){
+    if(x.pagos > 0 && x.atrasados === 0){ sp++; melhorPrazo = Math.max(melhorPrazo, sp); }
+    else if(x.pagos > 0) sp = 0;
+  });
+  var pt = patrimonio();
+  var mr = p.mesesDeReserva || 0;
+
+  return [
+    {ic:"I",  n:"Primeiro mês fechado", d:"Todas as contas do mês quitadas", ok:quitados >= 1, prog:quitados + " de 1"},
+    {ic:"VI", n:"Casa em ordem",        d:"Seis meses fechados por completo", ok:quitados >= 6, prog:quitados + " de 6"},
+    {ic:"↑",  n:"Três meses no azul",   d:"Sobra positiva três meses seguidos", ok:melhorAzul >= 3, prog:melhorAzul + " de 3"},
+    {ic:"◷",  n:"Nunca atrasa",         d:"Seis meses sem um único atraso", ok:melhorPrazo >= 6, prog:melhorPrazo + " de 6"},
+    {ic:"◧",  n:"Tudo documentado",     d:"Cinquenta comprovantes anexados", ok:recibos >= 50, prog:recibos + " de 50"},
+    {ic:"$",  n:"Um mês protegido",     d:"Reserva cobre um mês de essenciais", ok:mr >= 1, prog:mr.toFixed(1).replace(".",",") + " de 1"},
+    {ic:"$$", n:"Reserva completa",     d:"Seis meses de essenciais guardados", ok:mr >= 6, prog:mr.toFixed(1).replace(".",",") + " de 6"},
+    {ic:"★",  n:"Primeiro objetivo",    d:"Uma meta levada até o fim", ok:metasFeitas.length >= 1, prog:metasFeitas.length + " de 1"},
+    {ic:"◈",  n:"Investidor",           d:"Primeiro aporte registrado", ok:pt.aportado > 0, prog:pt.aportado > 0 ? "feito" : "nenhum"},
+    {ic:"▲",  n:"Dinheiro trabalhando", d:"Rendimento acumulado positivo", ok:pt.rendimento > 0, prog:pt.aportado > 0 ? fmt(pt.rendimento) : "—"},
+    {ic:"XII",n:"Um ano de história",   d:"Doze meses registrados", ok:hist.length >= 12, prog:hist.length + " de 12"},
+    {ic:"◎",  n:"Sem dívida",           d:"Um mês sem nada em dívidas e cartão", ok:hist.length > 0 && hist.some(function(x){ return !x.cats.dividas; }), prog:""}
+  ];
+}
+
+/* ================= painel ================= */
+function telaPainel(){
+  var p = panorama();
+  if(!p.hist.length){
+    return '<section class="painel"><p class="eyebrow">Painel</p></section>' +
+      '<div class="secao"><div class="vazio"><h3>Ainda sem histórico</h3>' +
+      '<p>Lance e pague as contas de pelo menos um mês. A partir daí o painel começa a medir, comparar e sugerir.</p></div></div>';
+  }
+  var esc0 = escadaEvolucao(p);
+  var atual = esc0.atual < esc0.passos.length ? esc0.passos[esc0.atual] : null;
+  var rm = resumo(mesAtivo);
+  var pt = patrimonio();
+  var comp = p.renda > 0 ? p.despesa/p.renda : 0;
+  var conq = listaConquistas().filter(function(c){ return c.ok; }).length;
+
+  function kpi(rot, num, det, classe){
+    return '<div class="kpi ' + (classe||"") + '"><span class="r">' + rot + '</span>' +
+      '<span class="n">' + num + '</span><span class="d">' + det + '</span></div>';
+  }
+
+  var html = '<section class="painel"><p class="eyebrow">Etapa ' + Math.min(esc0.atual+1,5) + ' de 5</p>' +
+    '<div class="total" style="font-size:25px;line-height:1.15">' + (atual ? esc(atual.nome) : "Tudo conquistado") + '</div>' +
+    '<div class="legenda"><span>' + p.meses + (p.meses === 1 ? " mês registrado" : " meses registrados") + '</span>' +
+    '<span>' + conq + ' conquistas</span></div></section>';
+
+  html += '<section class="secao"><p class="eyebrow">Indicadores</p><div class="kpis">' +
+    kpi("Quitação do mês", rm.pc + "%", fmt(rm.aberto) + " em aberto",
+        rm.pc >= 100 ? "bom" : rm.pc >= 60 ? "meio" : "ruim") +
+    kpi("Pontualidade", (p.pontualidade === null ? "—" : p.pontualidade + "%"), "pagas até o vencimento",
+        p.pontualidade === null ? "" : p.pontualidade >= 90 ? "bom" : p.pontualidade >= 75 ? "meio" : "ruim") +
+    kpi("Sobra média", fmt(p.sobra), "por mês, últimos meses", p.sobra > 0 ? "bom" : "ruim") +
+    kpi("Comprometimento", (p.renda > 0 ? Math.round(comp*100) + "%" : "—"), "da renda vai para contas",
+        p.renda <= 0 ? "" : comp <= 0.7 ? "bom" : comp <= 0.9 ? "meio" : "ruim") +
+    kpi("Reserva", (p.essenciais > 0 ? p.mesesDeReserva.toFixed(1).replace(".",",") : "—"), "meses de essenciais cobertos",
+        p.mesesDeReserva >= 6 ? "bom" : p.mesesDeReserva >= 1 ? "meio" : "ruim") +
+    kpi("Patrimônio", fmt(pt.saldo), (pt.aportado > 0 ? (pt.rendimento >= 0 ? "+" : "") + fmt(pt.rendimento) + " de rendimento" : "nenhum aporte ainda"),
+        pt.rendimento > 0 ? "bom" : "") +
+    kpi("Comprovantes", (p.cobertura === null ? "—" : p.cobertura + "%"), "das contas pagas têm recibo",
+        p.cobertura === null ? "" : p.cobertura >= 80 ? "bom" : "meio") +
+    kpi("Guardado", fmt(p.guardadoTotal), "somando todas as metas", p.guardadoTotal > 0 ? "bom" : "") +
+    '</div></section>';
+
+  html += '<section class="secao"><p class="eyebrow">Previsto x pago</p><div class="cartao" style="margin-top:10px">' +
+    grafico(p.hist, "total", "pago", "previsto", "pago") + '</div></section>';
+
+  html += '<section class="secao"><p class="eyebrow">Sobra do mês</p><div class="cartao" style="margin-top:10px">' +
+    graficoSobra(p.hist) +
+    '<p class="aviso" style="margin-top:10px">Média: <b style="color:' +
+      (p.sobra >= 0 ? "var(--cofre)" : "var(--carimbo)") + '">' + fmt(p.sobra) + '</b></p></div></section>';
+
+  if(pt.saldo > 0){
+    html += '<section class="secao"><p class="eyebrow">Evolução do patrimônio</p><div class="cartao" style="margin-top:10px">' +
+      grafSimples(patrimonioPorMes(12), "total", "var(--cofre)") +
+      '<p class="aviso" style="margin-top:8px">Atualize os saldos em Mais → Investimentos para a linha andar.</p></div></section>';
+  }
+
+  html += '<section class="secao"><p class="eyebrow">Escada da evolução</p><div class="cartao" style="margin-top:10px"><ul class="escada">' +
+    esc0.passos.map(function(s, ix){
+      var cls = s.ok ? "feita" : (ix === esc0.atual ? "atual" : "");
+      return '<li class="' + cls + '"><span class="marca-e">' + (s.ok ? "✓" : (ix+1)) + '</span>' +
+        '<span class="txt-e"><b>' + esc(s.nome) + '</b><span>' + esc(s.detalhe) + '</span></span></li>';
+    }).join("") + '</ul></div></section>';
+
+  var recs = recomendacoes(p);
+  if(recs.length){
+    html += '<section class="secao"><p class="eyebrow">Seu plano de evolução</p><div class="cartao" style="margin-top:10px">' +
+      recs.map(function(x){
+        return '<div class="reco ' + x.n + '"><b>' + esc(x.t) + '</b><p>' + esc(x.p) +
+          '<span class="faz">→ ' + esc(x.f) + '</span></p></div>';
+      }).join("") + '</div></section>';
+  }
+  return html;
+}
+
+function grafSimples(dados, campo, cor){
+  if(!dados.length) return '<p class="aviso">Sem dados ainda.</p>';
+  var max = 0;
+  dados.forEach(function(d){ max = Math.max(max, d[campo]||0); });
+  if(max <= 0) return '<p class="aviso">Sem valores ainda.</p>';
+  return '<div class="graf">' + dados.map(function(d){
+    var alt = Math.max(2, Math.round((d[campo]||0)/max*96));
+    return '<div class="col"><div class="pil" style="height:' + alt + 'px;background:' + cor + '"></div>' +
+      '<span class="rot">' + nomeMes(d.chave).slice(0,3) + '</span></div>';
+  }).join("") + '</div>';
+}
+
+function telaMais(){
+  var pt = patrimonio();
+  var conq = listaConquistas();
+  var ganhas = conq.filter(function(c){ return c.ok; }).length;
+  var fixasAtivas = (estado.fixas||[]).filter(function(f){ return f.ativo !== false; }).length;
+
+  return '<section class="painel"><p class="eyebrow">Módulos</p></section>' +
+    '<div class="menu" style="margin-top:4px">' +
+      item("↻","Contas fixas", fixasAtivas + (fixasAtivas === 1 ? " ativa" : " ativas"), "ir-fixas") +
+      item("◈","Investimentos", pt.saldo > 0 ? fmt(pt.saldo) + " em patrimônio" : "nenhum cadastrado", "ir-investimentos") +
+      item("★","Conquistas", ganhas + " de " + conq.length + " desbloqueadas", "ir-conquistas") +
+    '</div>' +
+    '<section class="secao"><p class="eyebrow">Sistema</p><div class="menu" style="margin-top:10px">' +
+      item("⇄","Sincronização", sync.ativo ? "ligada · " + textoSync() : "não configurada", "sync-config") +
+      item("▤","Backup dos dados", estado.ultimoBackup ? "último em " + new Date(estado.ultimoBackup).toLocaleDateString("pt-BR") : "nunca feito", "backup") +
+      item("⚙","Configurações", "perfil, aparência e limpeza", "ir-config") +
+    '</div></section>';
+
+  function item(ic, titulo, sub, acao){
+    return '<button data-acao="' + acao + '"><span class="ic-m">' + ic + '</span>' +
+      '<span class="tx"><b>' + titulo + '</b><span>' + esc(sub) + '</span></span>' +
+      '<span class="seta-m">›</span></button>';
+  }
+}
+
+function telaInvestimentos(){
+  var pt = patrimonio();
+  var lista = estado.investimentos || [];
+
+  var html = '<section class="painel"><p class="eyebrow">Patrimônio investido</p>' +
+    '<div class="total">' + fmt(pt.saldo) + '</div>' +
+    '<div class="legenda"><span>Aportado <b>' + fmt(pt.aportado) + '</b></span>' +
+    (pt.aportado > 0
+      ? '<span>Rendimento <b style="color:' + (pt.rendimento >= 0 ? "var(--cofre)" : "var(--carimbo)") + '">' +
+        (pt.rendimento >= 0 ? "+" : "") + fmt(pt.rendimento) + ' · ' + (pt.pc*100).toFixed(1).replace(".",",") + '%</b></span>'
+      : "") +
+    '</div></section>';
+
+  if(!lista.length){
+    return html + '<div class="secao"><div class="vazio"><h3>Onde seu dinheiro está</h3>' +
+      '<p>Cadastre suas aplicações e registre o saldo de vez em quando. O app calcula quanto rendeu e mostra a curva do patrimônio.</p>' +
+      '<button class="btn largo" data-acao="nova-inv">Cadastrar aplicação</button></div></div>';
+  }
+
+  html += '<section class="secao">' + lista.map(function(v){
+    var s = saldoInv(v), ap = totalAportes(v), r = s - ap;
+    var dt = dataSaldo(v);
+    return '<div class="inv">' +
+      '<div class="top"><span class="ponto" style="background:#1D7A5F"></span>' +
+        '<b>' + esc(v.nome) + '</b><span class="tipo">' + esc(v.tipo || "Outro") + '</span></div>' +
+      '<div class="saldo">' + fmt(s) + '</div>' +
+      '<div class="rend ' + (r >= 0 ? "pos" : "neg") + '">Aportado ' + fmt(ap) +
+        (ap > 0 ? ' · rendimento <b>' + (r >= 0 ? "+" : "") + fmt(r) + '</b>' : "") +
+        (dt ? '<br>saldo de ' + new Date(dt).toLocaleDateString("pt-BR") : "") + '</div>' +
+      '<div class="meta-acoes">' +
+        '<button class="btn secundario" style="flex:1" data-acao="inv-aporte" data-id="' + v.id + '">Novo aporte</button>' +
+        '<button class="btn secundario" style="flex:1" data-acao="inv-saldo" data-id="' + v.id + '">Atualizar saldo</button>' +
+        '<button class="btn secundario" style="flex:0 0 auto;padding:12px 14px" data-acao="editar-inv" data-id="' + v.id + '">⚙</button>' +
+      '</div></div>';
+  }).join("") +
+  '<button class="btn secundario largo" data-acao="nova-inv" style="margin-top:2px">Cadastrar aplicação</button></section>';
+
+  if(pt.saldo > 0){
+    html += '<section class="secao"><p class="eyebrow">Evolução do patrimônio</p><div class="cartao" style="margin-top:10px">' +
+      grafSimples(patrimonioPorMes(12), "total", "var(--cofre)") + '</div></section>';
+  }
+  html += '<section class="secao"><p class="aviso">Aportes e saldos são lançados por você. O app não conecta em banco nem corretora — o que ele faz é guardar o histórico e calcular a diferença entre o que entrou e o que existe hoje.</p></section>';
+  return html;
+}
+
+function telaConquistas(){
+  var lista = listaConquistas();
+  var ganhas = lista.filter(function(c){ return c.ok; });
+  var metasFeitas = (estado.metas||[]).filter(function(m){ return calculoMeta(m).completa; });
+
+  var html = '<section class="painel"><p class="eyebrow">Conquistas</p>' +
+    '<div class="total">' + ganhas.length + ' <small style="font-size:18px;color:var(--fraca);font-weight:400">de ' + lista.length + '</small></div>' +
+    '<div class="regua"><div class="preenche" style="width:' + Math.round(ganhas.length/lista.length*100) + '%"></div><div class="ticks"></div></div>' +
+    '</section>';
+
+  if(metasFeitas.length){
+    html += '<section class="secao"><p class="eyebrow">Objetivos alcançados</p><div class="cartao" style="margin-top:10px">' +
+      metasFeitas.map(function(m){
+        return '<div class="catlinha"><span class="ponto" style="background:#1D7A5F"></span>' +
+          '<span class="nome">' + esc(m.nome) + '</span><span class="v">' + fmt(m.alvo) + '</span></div>';
+      }).join("") + '</div></section>';
+  }
+
+  html += '<section class="secao"><p class="eyebrow">Selos</p><div class="medalhas" style="margin-top:10px">' +
+    lista.map(function(c){
+      return '<div class="medalha' + (c.ok ? "" : " travada") + '">' +
+        '<span class="selo-c">' + c.ic + '</span><b>' + esc(c.n) + '</b>' +
+        '<span>' + esc(c.ok ? c.d : (c.prog || c.d)) + '</span></div>';
+    }).join("") + '</div></section>';
+  return html;
+}
+
+function telaConfig(){
+  var tema = sync.tema || "auto";
+  var html = '<section class="painel"><p class="eyebrow">Configurações</p></section>';
+
+  html += '<section class="secao"><p class="eyebrow">Este aparelho</p><div class="cartao" style="margin-top:10px">' +
+    '<div class="campo" style="margin:0"><label for="c-perfil">Quem usa</label>' +
+    '<input id="c-perfil" type="text" placeholder="Ary" value="' + esc(sync.perfil || "") + '"></div>' +
+    '<p class="aviso" style="margin-top:8px">Aparece em cada conta paga, para vocês dois saberem quem pagou o quê.</p>' +
+    '<button class="btn secundario largo" data-acao="salvar-perfil" style="margin-top:12px">Salvar nome</button>' +
+    '</div></section>';
+
+  html += '<section class="secao"><p class="eyebrow">Aparência</p><div class="cartao" style="margin-top:10px">' +
+    '<div class="segm" style="margin:0">' +
+    ["auto","claro","escuro"].map(function(t){
+      var rot = t === "auto" ? "Automático" : t === "claro" ? "Claro" : "Escuro";
+      return '<button type="button" data-acao="tema" data-t="' + t + '" class="' + (tema === t ? "ativo" : "") + '">' + rot + '</button>';
+    }).join("") + '</div></div></section>';
+
+  html += '<section class="secao"><p class="eyebrow">Zona de risco</p><div class="perigo-zona" style="margin-top:10px">' +
+    '<p>Estas ações não têm volta. Se a sincronização estiver ligada, o que você apagar aqui some também no repositório e no aparelho da sua esposa. Baixe um backup antes.</p>' +
+    '<button class="btn secundario largo" data-acao="backup" style="margin-bottom:8px">Baixar backup antes</button>' +
+    '<button class="btn perigo largo" data-acao="limpar-mes" style="margin-bottom:8px">Limpar o mês de ' + esc(nomeMes(mesAtivo)) + '</button>' +
+    '<button class="btn perigo largo" data-acao="limpar-cache" style="margin-bottom:8px">Apagar comprovantes deste aparelho</button>' +
+    '<button class="btn perigo largo" data-acao="limpar-tudo">Apagar tudo e recomeçar</button>' +
+    '</div></section>';
+
+  html += '<section class="secao"><p class="aviso" style="text-align:center">Carnê da Família Leite · versão 4</p></section>';
+  return html;
+}
+
+function telaMaisRoteador(){ return telaMais(); }
+
 function telaEvolucao(){
   var p = panorama();
   if(!p.hist.length){
@@ -2145,6 +2535,52 @@ function telaComprovante(i){
   return html;
 }
 
+function telaInvestimento(ctx){
+  var v = ctx.dado;
+  return '<h2 id="folha-titulo">' + (v ? "Editar aplicação" : "Nova aplicação") + '</h2>' +
+    campoTexto("nome","Nome", v ? v.nome : "", "Tesouro Selic, CDB do Nubank…") +
+    '<div class="campo"><label for="f-tipo">Tipo</label><select id="f-tipo">' +
+      TIPOS_INV.map(function(t){
+        return '<option value="' + t + '"' + (v && v.tipo === t ? " selected" : "") + '>' + t + '</option>';
+      }).join("") + '</select></div>' +
+    campoTexto("inst","Onde está", v ? (v.instituicao||"") : "", "Banco ou corretora") +
+    (v ? "" : campoDinheiro("saldo","Saldo hoje", 0)) +
+    (v ? "" : campoDinheiro("aport","Do total, quanto você aportou", 0)) +
+    (v ? "" : '<p class="aviso" style="margin:-6px 0 14px">A diferença entre os dois é o rendimento acumulado. Se não souber, deixe iguais.</p>') +
+    '<div class="rodape-folha"><button class="btn largo" data-f="salvar">Salvar</button>' +
+    (v ? '<button class="btn perigo largo" data-f="excluir">Excluir aplicação</button>' : "") + '</div>';
+}
+
+function telaMovInv(ctx){
+  var v = ctx.dado, ap = ctx.modo === "aporte";
+  return '<h2 id="folha-titulo">' + (ap ? "Novo aporte" : "Atualizar saldo") + '</h2>' +
+    '<p class="aviso" style="margin-bottom:16px">' + esc(v.nome) + ' · saldo atual ' + fmt(saldoInv(v)) + '</p>' +
+    campoDinheiro("valor", ap ? "Quanto você aplicou agora" : "Saldo que aparece hoje", ap ? 0 : saldoInv(v)) +
+    (ap ? '<p class="aviso" style="margin:-6px 0 14px">O saldo também sobe com este valor. Depois, ao consultar o app do banco, use "Atualizar saldo" para capturar o rendimento.</p>' : "") +
+    '<div class="rodape-folha"><button class="btn largo" data-f="salvar">Registrar</button></div>';
+}
+
+function telaLimpar(ctx){
+  var t = {
+    mes: {tit:"Limpar " + nomeMes(mesAtivo),
+          txt:"Apaga todos os lançamentos deste mês, inclusive pagamentos e comprovantes anexados. As contas fixas continuam cadastradas e voltam a aparecer.",
+          bot:"Apagar os lançamentos de " + nomeMes(mesAtivo)},
+    cache:{tit:"Apagar comprovantes locais",
+          txt:"Remove as imagens guardadas neste aparelho para liberar espaço. Se a sincronização estiver ligada, elas continuam no repositório e são baixadas de novo quando você abrir cada conta.",
+          bot:"Apagar cache de imagens"},
+    tudo: {tit:"Apagar tudo e recomeçar",
+          txt:"Apaga contas, fixas, metas, investimentos, histórico e comprovantes. Volta ao estado de app recém-instalado. Com a sincronização ligada, isso também limpa o repositório — sua esposa perde tudo junto.",
+          bot:"Apagar tudo definitivamente"}
+  }[ctx.modo];
+
+  return '<h2 id="folha-titulo">' + esc(t.tit) + '</h2>' +
+    '<div class="perigo-zona" style="margin-bottom:18px"><p style="margin:0">' + esc(t.txt) + '</p></div>' +
+    '<div class="rodape-folha">' +
+      '<button class="btn secundario largo" data-f="baixar-backup">Baixar backup antes</button>' +
+      '<button class="btn perigo largo" data-f="excluir">' + esc(t.bot) + '</button>' +
+    '</div>';
+}
+
 function telaSync(){
   var passos =
     '<p class="passo"><span class="n">1</span>No GitHub, crie um repositório <b>privado</b> chamado <b>carne-dados</b> e marque <b>Add a README file</b>.</p>' +
@@ -2226,7 +2662,13 @@ function abrirFolha(ctx){
   contexto = ctx;
   var corpo = "";
 
-  if(ctx.tipo === "comprovar"){
+  if(ctx.tipo === "investimento"){
+    corpo = telaInvestimento(ctx);
+  }else if(ctx.tipo === "inv-mov"){
+    corpo = telaMovInv(ctx);
+  }else if(ctx.tipo === "limpar"){
+    corpo = telaLimpar(ctx);
+  }else if(ctx.tipo === "comprovar"){
     corpo = telaComprovar(ctx.dado);
   }else if(ctx.tipo === "comprovante"){
     corpo = telaComprovante(ctx.dado);
@@ -2316,7 +2758,7 @@ function abrirFolha(ctx){
       });
     })(ctx.dado.comprovante);
   }
-  if(ctx.tipo !== "modelo" && ctx.tipo !== "meta" && ctx.tipo !== "backup" && ctx.tipo !== "sync" && ctx.tipo !== "comprovante" && ctx.tipo !== "comprovar"){
+  if(ctx.tipo !== "modelo" && ctx.tipo !== "meta" && ctx.tipo !== "backup" && ctx.tipo !== "sync" && ctx.tipo !== "comprovante" && ctx.tipo !== "comprovar" && ctx.tipo !== "limpar"){
     var primeiro = folha.querySelector("input");
     if(primeiro) setTimeout(function(){ primeiro.focus(); }, 280);
   }
@@ -2430,6 +2872,80 @@ folha.addEventListener("click", function(e){
     var qtd = marcados.length;
     salvar(); fecharFolha(); render();
     recado(qtd + (qtd === 1 ? " conta criada" : " contas criadas") + ". Agora informe os valores.");
+    return;
+  }
+
+  if(acao === "salvar" && ctx.tipo === "investimento"){
+    var nomeI = (folha.querySelector("#f-nome").value || "").trim();
+    if(!nomeI){ recado("Dê um nome à aplicação"); return; }
+    var tipoI = folha.querySelector("#f-tipo").value;
+    var instI = (folha.querySelector("#f-inst").value || "").trim();
+    if(ctx.dado){
+      ctx.dado.nome = nomeI; ctx.dado.tipo = tipoI; ctx.dado.instituicao = instI;
+      tocar(ctx.dado);
+    }else{
+      var sal = lerDinheiro("saldo"), apo = lerDinheiro("aport");
+      var nv = tocar({id:id(), nome:nomeI, tipo:tipoI, instituicao:instI, aportes:[], saldos:[]});
+      if(apo > 0) nv.aportes.push({id:id(), data:agora(), valor:apo});
+      if(sal > 0) nv.saldos.push({id:id(), data:agora(), valor:sal});
+      estado.investimentos.push(nv);
+    }
+    salvar(); fecharFolha(); render();
+    return;
+  }
+
+  if(acao === "salvar" && ctx.tipo === "inv-mov"){
+    var vv = lerDinheiro("valor");
+    if(vv <= 0){ recado("Informe o valor"); return; }
+    if(ctx.modo === "aporte"){
+      ctx.dado.aportes = ctx.dado.aportes || [];
+      ctx.dado.aportes.push({id:id(), data:agora(), valor:vv});
+      ctx.dado.saldos = ctx.dado.saldos || [];
+      ctx.dado.saldos.push({id:id(), data:agora(), valor:saldoInv(ctx.dado) + vv});
+      recado("Aporte de " + fmt(vv) + " registrado");
+    }else{
+      ctx.dado.saldos = ctx.dado.saldos || [];
+      ctx.dado.saldos.push({id:id(), data:agora(), valor:vv});
+      var rr = vv - totalAportes(ctx.dado);
+      recado(rr >= 0 ? "Rendimento acumulado: " + fmt(rr) : "Saldo atualizado");
+    }
+    tocar(ctx.dado);
+    salvar(); fecharFolha(); render();
+    return;
+  }
+
+  if(acao === "excluir" && ctx.tipo === "limpar" && b.dataset.confirma === "1"){
+    if(ctx.modo === "mes"){
+      var mm = estado.meses[mesAtivo];
+      if(mm){ (mm.itens||[]).forEach(function(i){ matar(i.id); }); mm.itens = []; mm.entradas = []; mm.rotina = {}; }
+      recado("Mês limpo");
+    }else if(ctx.modo === "cache"){
+      abrirIDB().then(function(db){
+        if(!db) return;
+        try{ var t = db.transaction("arq","readwrite"); t.objectStore("arq").clear(); }catch(e){}
+      });
+      recado("Cache de imagens apagado");
+      fecharFolha(); return;
+    }else{
+      estado = padrao();
+      normalizarEstado();
+      abrirIDB().then(function(db){
+        if(!db) return;
+        try{ var t2 = db.transaction("arq","readwrite"); t2.objectStore("arq").clear(); }catch(e){}
+      });
+      mesAtivo = chaveMes(new Date());
+      aba = "contas";
+      recado("Tudo apagado");
+    }
+    salvar(); fecharFolha(); render();
+    return;
+  }
+
+  if(acao === "excluir" && ctx.tipo === "investimento" && b.dataset.confirma === "1"){
+    matar(ctx.dado.id);
+    estado.investimentos = estado.investimentos.filter(function(x){ return x.id !== ctx.dado.id; });
+    salvar(); fecharFolha(); render();
+    recado("Aplicação removida");
     return;
   }
 
@@ -2776,6 +3292,22 @@ document.getElementById("tela").addEventListener("click", function(e){
   else if(a === "modelo"){ abrirFolha({tipo:"modelo"}); }
   else if(a === "csv"){ copiarCSV(); }
   else if(a === "backup"){ abrirFolha({tipo:"backup"}); }
+  else if(a === "ir-fixas"){ irAba("fixas"); }
+  else if(a === "ir-investimentos"){ irAba("investimentos"); }
+  else if(a === "ir-conquistas"){ irAba("conquistas"); }
+  else if(a === "ir-config"){ irAba("config"); }
+  else if(a === "nova-inv"){ abrirFolha({tipo:"investimento"}); }
+  else if(a === "editar-inv"){ var vi = acharInv(alvo.dataset.id); if(vi) abrirFolha({tipo:"investimento", dado:vi}); }
+  else if(a === "inv-aporte"){ var va = acharInv(alvo.dataset.id); if(va) abrirFolha({tipo:"inv-mov", dado:va, modo:"aporte"}); }
+  else if(a === "inv-saldo"){ var vs = acharInv(alvo.dataset.id); if(vs) abrirFolha({tipo:"inv-mov", dado:vs, modo:"saldo"}); }
+  else if(a === "salvar-perfil"){
+    sync.perfil = (document.getElementById("c-perfil").value || "").trim();
+    salvarSync(); recado("Nome salvo");
+  }
+  else if(a === "tema"){ aplicarTema(alvo.dataset.t); render(); }
+  else if(a === "limpar-mes"){ abrirFolha({tipo:"limpar", modo:"mes"}); }
+  else if(a === "limpar-cache"){ abrirFolha({tipo:"limpar", modo:"cache"}); }
+  else if(a === "limpar-tudo"){ abrirFolha({tipo:"limpar", modo:"tudo"}); }
   else if(a === "sync-config"){ abrirFolha({tipo:"sync"}); }
   else if(a === "sync-enviar"){ enviarSync(false); }
   else if(a === "sync-baixar"){
@@ -2802,19 +3334,24 @@ document.getElementById("tela").addEventListener("change", function(e){
   });
 });
 document.getElementById("status").addEventListener("click", function(){ abrirFolha({tipo:"backup"}); });
+function irAba(nova){ aba = nova; animarLista = true; window.scrollTo(0,0); render(); }
 function irMes(n){ mesAtivo = moveMes(mesAtivo, n); animarLista = true; render(); }
-document.getElementById("ant").addEventListener("click", function(){ irMes(-1); });
+document.getElementById("ant").addEventListener("click", function(){
+  if(this.dataset.volta === "1"){ irAba("mais"); return; }
+  irMes(-1);
+});
 document.getElementById("prox").addEventListener("click", function(){ irMes(1); });
 document.getElementById("ir-hoje").addEventListener("click", function(){ mesAtivo = chaveMes(new Date()); animarLista = true; render(); });
 document.getElementById("fab").addEventListener("click", function(){
   if(aba === "metas") abrirFolha({tipo:"meta"});
+  else if(aba === "investimentos") abrirFolha({tipo:"investimento"});
   else abrirFolha({tipo: aba === "fixas" ? "fixa" : "conta"});
 });
 
 var abasBtns = document.querySelectorAll(".abas button");
 for(var k=0;k<abasBtns.length;k++){
   (function(b){
-    b.addEventListener("click", function(){ aba = b.dataset.aba; animarLista = true; window.scrollTo(0,0); render(); });
+    b.addEventListener("click", function(){ irAba(b.dataset.aba); });
   })(abasBtns[k]);
 }
 
@@ -2849,6 +3386,7 @@ if("serviceWorker" in navigator && location.protocol.indexOf("http") === 0){
 })();
 
 carregarSync();
+aplicarTema(sync.tema || "auto");
 carregarTudo().then(function(salvo){
   estado = (salvo && salvo.meses) ? salvo : padrao();
   normalizarEstado();
